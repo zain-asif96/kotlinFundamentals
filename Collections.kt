@@ -24,7 +24,6 @@ fun main() {
     println(allSubjects[3])
 
 
-
     // 2. List as MutableList
     /** A list is a collection of items that are ordered and can be accessed by their index. 
      * In Kotlin, you can create a list using the listOf() function. 
@@ -46,7 +45,6 @@ fun main() {
     attendees.remove("Ali")
     attendees.removeAt(3)
     
-    
     //Length of list
     println(attendees.size)
     
@@ -57,14 +55,50 @@ fun main() {
     //Find index of element
     println(attendees.indexOf("Adeel"))
     
-    
     //Show all the elements by using for loop
     for(attendee in attendees) {
         println(attendee)
     }
     
-    
     //Check if elements present in the list
     println("Ali" in attendees)
     println(attendees.contains("Ahmed"))
+
+
+    // 3. Set as MutableSet
+    /** A set is a collection of items that are unordered and do not allow duplicates. 
+     * In Kotlin, you can create a set using the setOf() function. 
+     * The setOf() function creates an immutable set, which means that you cannot add or remove items from the set after it has been created.
+     * A set is a collection that contains no duplicate elements. 
+     * Set is an interface that defines properties and methods related to a read-only collection of unique items.
+     * MutableSet extends the Set interface by defining methods to modify a set, such as adding and removing elements.
+    **/
+
+    val fruits = mutableSetOf<String>("Apple", "Banana", "Orange")
+    
+    //Add elements to the set
+    fruits.add("Mango")
+    fruits.add("Apple")
+    fruits.add("Grapes")
+    fruits.add("Strawberry")
+
+    //Remove elements from the set but cannot remove by index
+    fruits.remove("Banana")
+    /* xxx fruits.removeAt("Strawberry") xxx */
+
+    //Length of set
+    println(fruits.size)
+
+    //Access the elements
+    println(fruits.elementAt(3))
+    println(fruits.indexOf("Apple"))
+
+    //Show all the elements by using for loop
+    for(fruit in fruits) {
+        println(fruit)
+    }
+
+    //Check if elements present in the set
+    println("Banana" in fruits)
+    println(fruits.contains("Apple"))
 }
