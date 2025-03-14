@@ -101,4 +101,44 @@ fun main() {
     //Check if elements present in the set
     println("Banana" in fruits)
     println(fruits.contains("Apple"))
+
+
+    // 4. Map as MutableMap
+    /** A map is a collection of key-value pairs, where each key is unique. 
+     * In Kotlin, you can create a map using the mapOf() function. 
+     * The mapOf() function creates an immutable map, which means that you cannot add or remove items from the map after it has been created.
+     * A map is a collection that contains key-value pairs. 
+     * Map is an interface that defines properties and methods related to a read-only collection of key-value pairs.
+     * MutableMap extends the Map interface by defining methods to modify a map, such as adding and removing key-value pairs.
+    **/
+
+    val student = mutableMapOf<String, String>(
+        "name" to "Ali",
+        "age" to "20",
+        "rollNo" to "1234"
+    )
+
+    //Add elements to the map
+    student.put("class", "10th")
+    student["section"] = "A"
+    student.put("city", "Karachi")
+
+    //Remove elements from the map
+    student.remove("age")
+
+    //Length of map
+    println(student.size)
+
+    //Access the elements
+    println(student["name"])
+    println(student.get("rollNo"))
+
+    //Show all the elements by using for loop
+    for((key, value) in student) {
+        println("$key: $value")
+    }
+
+    //Check if elements present in the map
+    println(student.containsKey("age"))
+    println(student.containsValue("Ali"))
 }
