@@ -142,3 +142,11 @@ fun main() {
     println(student.containsKey("age"))
     println(student.containsValue("Ali"))
 }
+
+/** Summary
+    * Arrays store ordered data of the same type, and have a fixed size.
+    * Arrays are used to implement many of the other collection types.
+    * Lists are a resizable, ordered collection.
+    * Sets are unordered collections and cannot contain duplicates.
+    * Maps work similarly to sets and store pairs of keys and values of the specified type.
+**/
