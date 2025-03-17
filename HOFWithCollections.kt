@@ -128,6 +128,19 @@ fun main() {
             println("Cake: ${it.flavor}")
             println("Price: ${it.price}")
         }        
-    }    
+    }
+
+    /** 5. Combine elements with fold() 
+     * fold(initial: R, operation: (R, T) -> R): R
+     * The fold() function takes an initial value and a lambda expression as arguments.
+     * The lambda expression is a function that takes an accumulator and an element of the collection as parameters and returns a new accumulator.
+     * The fold() function returns the final accumulator value.
+     * The fold() function is useful when you want to combine the elements of a collection into a single value.
+    **/
+
+    val total = cakes.fold(0.0) { acc, cake -> acc + (cake.price * cake.quantity) }
+
+    println("")
+    println("Total Price: $${total}")
 }
 
