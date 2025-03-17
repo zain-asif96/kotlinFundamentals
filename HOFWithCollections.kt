@@ -142,5 +142,22 @@ fun main() {
 
     println("")
     println("Total Price: $${total}")
+
+    /** 6. Sort elements with sortedBy() 
+     * sortedBy(selector: (T) -> R): List<T>
+     * The sortedBy() function takes a lambda expression as an argument and applies it to each element in the collection.
+     * The lambda expression is a function that takes an element of the collection as a parameter and returns a value to sort by.
+     * The sortedBy() function returns a new list containing the elements sorted by the values returned by the lambda expression.
+     * The sortedBy() function is useful when you want to sort elements in a collection based on a property.
+    **/
+
+    val sortedCakes = cakes.sortedBy { it.price }
+
+    println("")
+    println("Sorted Cakes:")
+    
+    sortedCakes.forEach{
+        println("${it.flavor} - $${it.price}")
+    }
 }
 
