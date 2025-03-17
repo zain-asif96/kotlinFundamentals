@@ -109,6 +109,25 @@ fun main() {
     sprinkleCake.forEach{
         println("${it.flavor}")
     }
+
+    /** 4. Group elements with groupBy() 
+     * groupBy(keySelector: (T) -> K): Map<K, List<T>>
+     * The groupBy() function takes a lambda expression as an argument and applies it to each element in the collection.
+     * The lambda expression is a function that takes an element of the collection as a parameter and returns a key.
+     * The groupBy() function returns a map where the keys are the values returned by the lambda expression and the values are lists of elements that share the same key.
+     * The groupBy() function is useful when you want to group elements in a collection based on a common property.
+    **/
+
+    val priceGroups = cakes.groupBy { it.price }
+
+    println("")
+    println("Price Groups:")
     
+    priceGroups.forEach{ 
+        it.value.forEach{ 
+            println("Cake: ${it.flavor}")
+            println("Price: ${it.price}")
+        }        
+    }    
 }
 
